@@ -43,14 +43,19 @@ const router = createRouter({
       component:()=>import('../views/test.vue'),
       children:[
         {
-          path:'/searchtest',
-          name:'searchtest',
-          component:()=>import('../components/searchquiz.vue')
+          path:'/buildQuestion',
+          name:'buildQuestion',
+          component:()=>import('../components/buildQuestion.vue')
         },
         {
-          path:'/bulidtest',
-          name:'buildtest',
-          component:()=>import('../components/bulidtest.vue')
+          path:'/searchQuestion',
+          name:'searchQuestion',
+          component:()=>import('../components/searchQuestion.vue')
+        },
+        {
+          path:'/newUpdateQuestion',
+          name:'newUpdateQuestion',
+          component:()=>import('../components/newUpdateQuestion.vue')
         },
       ]
     }
