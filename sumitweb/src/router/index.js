@@ -57,8 +57,28 @@ const router = createRouter({
           name:'newUpdateQuestion',
           component:()=>import('../components/newUpdateQuestion.vue')
         },
+        {
+          path:'/updateQuestion',
+          name:'updateQuestion',
+          component:()=>import('../components/updateQuestion.vue')
+        },
+        {
+          path:'/backhome',
+          name:'backhome',
+          component:()=>import('../components/backquestionhome.vue')
+        },
       ]
-    }
+    },
+    {
+      path:'/questionnaire/:id',
+      name:'questionnaire-detail',
+      component:()=>import('../components/QuestionnaireDetail.vue')
+    },
+    {      
+    path:'/updatepage/:id',
+    name:'updatepage',
+    component:()=>import('../components/updatepage.vue')
+    },
   ]
 })
 

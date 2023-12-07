@@ -33,16 +33,12 @@
             <th>流水號</th>
             <th>標題</th>
             <th>作者</th>
+            <th>狀態</th>
             <th>開始時間</th>
             <th>結束時間</th>
+            <th>編輯</th>
         </tr>
-        <!-- <tr>
-            <td>旅遊</td>
-            <td>幾月去迪士尼好玩</td>
-            <td>唐老鴨</td>
-            <td>2023-11-20</td>
-            <td>2023-11-30</td>
-        </tr> -->
+
         <tr v-for="(quiz, index) in quizData" :key="index">
           <td>{{ index+1 }}</td>
           <td>
@@ -52,9 +48,14 @@
           </td>
           <!-- <td>{{ quiz.title }}</td> -->
           <td>{{ quiz.description }}</td>
-          <!-- <td>{{ quiz.questionnaire.published ? '已發佈' : '未發佈' }}</td> -->
+          <td>{{ quiz.published ? '已發佈' : '未發佈' }}</td>
           <td>{{ quiz.startDate }}</td>
           <td>{{ quiz.endDate }}</td>
+          <td>
+            <router-link :to="{ name: 'updatepage', params: { id: quiz.id }}">
+                編輯
+              </router-link>
+          </td>
       </tr>
         
   
@@ -166,8 +167,8 @@
                 } */
                 
                 .form-group button {
-                    background-color: #4caf50;
-                    color: #fff;
+                    background-color: rgb(224, 200, 14);
+                    color: #696565;
                     cursor: pointer;
                     font-size: 16px;
                     padding: 10px;
